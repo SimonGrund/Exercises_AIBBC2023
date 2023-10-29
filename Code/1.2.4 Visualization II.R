@@ -44,7 +44,7 @@ p + geom_point() +
 # C)
 # Replace the ? to make bar plot of patients enrolled per month 
 ggplot(chd_500) + 
-  ?(aes(month)) awdd daw dawdaw 
+  ?(aes(month)) 
 
 # D)
 # Replace the ?'s to make a stacked bar plot patients enrolled per month by sex
@@ -62,7 +62,7 @@ ggplot(chd_500, aes(sex, bmi)) +
 # G)
 # ... and then a dotplot, where the binwidth needs to be set for it to meaningful
 ggplot(chd_500, aes(sex, bmi)) + 
-  geom_?(binaxis = "y", stackdir = "center", binwidth = 0.8)
+  geom_?(binaxis = "y", stackdir = "center", binwidth = ?)
 
 # H)
 # If time permits try some of the other geoms, selecting relevant types 

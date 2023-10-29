@@ -13,7 +13,7 @@ tidymodels_prefer() #Set tidymodels as the default whenever multiple packages ha
 
 # load data
 chd_full = read_rds("Data/chd_full.rds")
-skim(chd_full)
+skim(?)
 
 #### PART 1 ####
 # Now, let's preprocess our data for modelling
@@ -23,7 +23,7 @@ skim(chd_full)
 set.seed(222)
 
 # Put 3/4 of the data into the training set 
-chd_split <- initial_split(chd_full, prop = 3/4., strata = chdfate)
+chd_split <- initial_split(data = ?, prop = 3/4., strata = chdfate)
 
 # A)
 # Create data frames for the two sets:
@@ -65,7 +65,7 @@ glimpse(chd_test_baked)
 
 
 ##### PART 2: time to start our modeling career! ####
-## define a parsnip model type and engine #### 
+## define a model type (logistic regression) and engine (glm) #### 
 lr_mod <- 
   logistic_reg() %>% 
   set_engine("glm")

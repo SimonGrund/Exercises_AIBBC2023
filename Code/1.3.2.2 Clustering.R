@@ -9,9 +9,9 @@
 library(tidyverse)
 library(ggdendro)
 
-#Load the data including PCs from module 1_2.
+#Load the data including PCs from the last module
 d = read_delim("Data/d_w_pca.tsv")
-glimpse(d)
+glimpse(?)
 
 # A) 
 # Perform k-means clustering on the PCs, with four centers.
@@ -21,29 +21,31 @@ kk = kmeans(x = ?, centers = ?) #Use ?help(kmeans) if yu need help on how to rep
 
 # B)
 # Plot the inferred clusters with different colors on the PC1 vs PC2 plot
-d$Cluster = as.factor(kk$cluster) #We see clusters as factors instead of numbers, 
-# for the graph to look nice. What happens if you hashtag this line and runs the script?
+# We set clusters as factors instead of numbers, 
+#for the graph to look nice. What happens if you hashtag this line and runs the script?
+d$Cluster = as.factor(kk$cluster) 
 
 ggplot(d, aes(x = .fittedPC1, y = .fittedPC2))+
-  geom_point(aes(color = Cluster))
+  geom_point(aes(color = ?))
 
 # C)
-# Try visualising with different numbers of clusters (centers). 
+# Try running kmeans and visualising with different numbers of clusters (centers). 
 
-# D) If you have additional time, you can try to perform k-means clustering on the 
-# original numeric values instead of the principal components. Does this separate as well?
+
+# D)
+# How many clusters are too many? How many are too few?
 
 # PART 2: Hierarchical clustering
 
-#First we make a distance matrix
-dist_mat_PC = dist(PCs)
+#First we make a distance matrix of the principal components
+dist_mat_PC = dist(?)
 
 #Then we generate hierarchical clustering
-clusters = hclust(dist_mat_PC)
+clusters = hclust(d = ?)
 
 #Use the ggdendro to make a nice ggplot of the clusters
-ggdendrogram(clusters) 
+ggdendrogram(?) 
 
-# D) If you have additional time, you can try to perform Hierarchical clustering on the 
-# original numeric values instead of the principal components. Does this separate as well?
+# Interpret the Dendrogram. How many clusters are there if we cut it at y=10? y=7.5? y=5? What is a good
+#place to cut the tree do you think?
 

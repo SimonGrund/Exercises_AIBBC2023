@@ -1,7 +1,7 @@
 ########
 # Module 2.3.1
 # Supervised learning
-# Random Forrest
+# Random Forest
 # 
 # Simon Grund Sorensen, Jakob Skou Pedersen, Søren Besenbacher, Aarhus University
 # 15/08-2023
@@ -49,7 +49,7 @@ rf_fit <- rf_with_seed %>%
 rf_fit
 
 # Can you interpret the rf_fit? It's a bit hard, because of the abstract
-# nature of the forrest. Let's make some performance evaluation to help us.
+# nature of the forest. Let's make some performance evaluation to help us.
 
 #### ## PART 3: Performance evaluation ####
 # add predictions to chd_test
@@ -68,7 +68,7 @@ classification_metrics(chd_test_w_pred_rf, truth = chdfate, estimate = .pred_cla
 
 # A)
 # The AUC using cross-validated logistic regression was 0.796
-# iv. How did the performance change from logistic regression to random forrest?
+# iv. How did the performance change from logistic regression to random forest?
 # v.  Why may it be relevant to evaluate different modeling procedures in 
 #     different situations?
 

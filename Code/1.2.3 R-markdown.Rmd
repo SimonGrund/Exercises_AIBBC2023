@@ -14,15 +14,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Remember to refer to the **R Markdown** cheat sheet and **Reference guide** when solving the below.
 
-1. Knit this document
-2. Make a new R Markdown document with html output
-3. Edit the document, by adding the following:
+1. Knit this document 
+2. Return here to R-studio and make a new R Markdown document with html output
+3. Edit the document, by removing the pre-made text and make a new text with the following:
     - headers of different levels.
     - text typeset in *italic* and **bold**.
     - ordered and unordered lists.
     - a hyperlink
 4. Try to Knit your document.
-5. Change output to pdf and knit it again.
+5. Change output to pdf and knit it again (might not work without additional software installed).
 6. Change output to word and knit it again.
 7. Add an R code chunk.
 8. Try making a plot based on the mpg data set.
@@ -33,7 +33,7 @@ Remember to refer to the **R Markdown** cheat sheet and **Reference guide** when
 ## R Markdown exercises part II
 
 1. Make a simple table by hand
-2. Make kable table with the first 10 lines of the chd_500 data set. 
+2. Make kable table with the first 10 lines of the chd_500 data set (Hint: use ?kable to get help. Remember to load the kable package before using it in your script). 
     - Remove variables if tables becomes too wide to fit.
 3. Add a table of contents by modifying the YAML header (see the cheat sheet).
 4. If time permits:

@@ -10,14 +10,14 @@ library(cluster)
 library(pheatmap)
 library(ape)
 library(tidyverse)
-
+ 
 
 
 
 # Import and Analyze Distance matrix -------------------------------------------------------------------------
 
 
-distance <- read.table('dist.tabular', header=T, sep="\t", row.names = 1)
+distance <- read.table('Data/dist.tabular', header=T, sep="\t", row.names = 1)
 rownames(distance)<-str_remove_all(rownames(distance),'.vcf')
 colnames(distance)<-str_remove_all(colnames(distance),'.vcf')
 
@@ -51,7 +51,7 @@ clusters %>%
 
 
 ## Load Tree
-ape::read.tree('tree.nhx')->tree
+ape::read.tree('Data/tree.nhx')->tree
 
 plot(tree)
 
@@ -244,3 +244,4 @@ tree_rescaled$tip.label <- as.character(mtbc_lineages[tree_rescaled$tip.label])
 par(mfrow = c(1, 1))
 plot(tree_rescaled, cex = 0.6, main = "Dated phylogeny (years)")
 axisPhylo()
+

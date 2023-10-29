@@ -29,28 +29,24 @@ plot(d)
 summary(d$x)
 summary(d$y)
 
-# Now, let's start to look at some better data visualizations here in
-# Exercises Part I:
+# Now, let's start to look at some better data visualizations
 
-#### Exercises part I ##########################################################
-# We start by exploring aesthaetics using the mpg data set, which is a build-in training data set in R.
-# Refer to the uploaded ggplot cheat sheet (data-visualization.pdf) for parameter specification. 
-
-# First, we load the tidyverse which is an essential set of packages for data analysis.
+#### Exercises part I #####
+# First, we load the tidyverse which is an essential set of packages for data analysis, and includes ggplot.
 # Run below line (or any line of code) by having the caret (|-cursor) on the line and pressing 
 # CMD+enter (MAC) or CTRL+enter (PC)
 library(tidyverse)
 
-# Let's load some data that is built into R. Later
+# Let's load the mpd data that is built into R. Later
 # you will learn to load your own data, but for now
 # we are just practicing. Run this line to define the 
 # built in 'mpg' data set as a variable called 'd'.
 d = mpg
 
-# Try to click the 'd' data set in environment and look at the
+# Try to click the 'd' data set in environment (upper right corner) and look at the
 # data window that pop's up. Just spend a moment to see, that the
 # data looks a lot like a normal excel sheet. Then close the data
-# window and return to this script.
+# window on the 'x' and return to this script.
 
 # Initiate an empty plot with the mpg data
 ggplot(data = mpg)
@@ -64,36 +60,39 @@ ggplot(data = mpg) +
 # Let's try a dot-plot where we compare hwy with displ (engine displacement, in litres)
 # Replace the '?' to plot 'hwy' on the y-axis
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy))
+  geom_point(mapping = aes(x = displ, y = ?))
 
 # Replace the ?'s to make point size reflect the number of cylinders (cyl)
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, size = 1))
+  geom_point(mapping = aes(x = displ, y = hwy, size = ?))
 
 # Replace the ?'s to make color reflect the number of cylinders (cyl)
 ggplot(data = mpg) + 
-  geom_point(mapping = aes(x = displ, y = hwy, color = cyl))
+  geom_point(mapping = aes(x = displ, y = hwy, color = ?))
 
 # Try to execute the aes function on its own to what it returns
 aes(x = displ, y = hwy)
 
-# Replace the ? to make a dotted line in the below
+# Replace the ? to make a dotted line in the below (Hint: use ?linetype to see help, or google it (or ask us))
 ggplot(data = mpg) + 
-  geom_smooth(mapping = aes(x = displ, y = hwy), linetype = "dotted")
+  geom_smooth(mapping = aes(x = displ, y = hwy), linetype = ?)
 
-# Change the geom below to make a histogram
+# Change the geom below to make a histogram (geom_histogram)
 ggplot(data = mpg) + 
-  geom_histogram(mapping = aes(x = hwy))
+  geom_?(mapping = aes(x = hwy))
 
-# Repeat the histogram, but extend the binwith or reduce the number of bins. 
+# Repeat the histogram, but extend the binwith or reduce the number of bins to 5. 
 # Look at the cheat sheet or manual page for help. 
 ggplot(data = mpg) + 
-  geom_histogram(mapping = aes(x = hwy), binwidth = 5)
+  geom_histogram(mapping = aes(x = hwy), ? = ?)
 
-# Plot displ versus cty with red squares (using geom_points)
+# Plot displ versus cty with color = red and shape = "+" (using geom_points)
 ggplot(data=mpg, aes(cty, displ)) +
-  geom_point()+
-  geom_smooth()
+  geom_point(? , ?)
 
-# Add one layer to the above plot, by adding a blue geom_smooth line.
+# Add one layer to the above plot, by adding a geom_smooth line.
 
+# Press export -> save as pdf and save your beautiful graph to your computer if you like : )
+
+# If time allows, continue with Visualization II or the exercises in R for data science chapter 2: 
+#https://r4ds.hadley.nz/data-visualize#introduction 

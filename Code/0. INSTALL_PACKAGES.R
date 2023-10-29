@@ -3,7 +3,7 @@ install.packages("BiocManager", repos = "https://cloud.r-project.org")
 packages_to_install = c(
   "tidyverse", "broom", "Rtsne", "M3C", "tidymodels", "skimr", "ggdendro",
   "GGally", "dotwhisker", "vip", "ranger", "data.table",
-  "gapminder", "riskCommunicator", "pheatmap", "ape", "cluster"
+  "gapminder", "riskCommunicator", "pheatmap", "ape", "cluster", "ggpubr"
 )
 
 new_packages = packages_to_install[!(packages_to_install %in% installed.packages()[,"Package"])]

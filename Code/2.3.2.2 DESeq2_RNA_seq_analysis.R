@@ -77,9 +77,5 @@ head(res)
 
 # A) 
 # Do we find the same top-hit gene as when we ran the models ourselves in 3_1_1?
-# (hint: The top gene in 3_1_1 was ENSG00000117308.14)
 
-# B)
-#The DESeq2 top-hit (ENSG00000100321.14) had a p-value of 0.45 in our analysis. 
-# Why do you think the result is so different?
 

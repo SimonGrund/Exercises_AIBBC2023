@@ -27,15 +27,14 @@ skim(chd_full)
 # Fix the random numbers by setting the seed. This enables the analysis to be reproducible when random numbers are used 
 set.seed(222)
 
-# Put 3/4 of the data into the training set 
-chd_split <- initial_split(chd_full, prop = 3/4., strata = chdfate)
+# Put 3/4 of the data into the training set, stratified by the outcome of interest
+chd_split <- initial_split(chd_full, prop = 3/4., strata = ?)
 
 # A)
 # Create data frames for the two sets:
 chd_train <- training(chd_split)
-chd_test <- testing(chd_split)
-chd_train
-chd_test
+chd_test <- testing(?)
+
 # B)
 # Create 10 cross-validation folds (data subsets)
 set.seed(345)
@@ -157,4 +156,7 @@ final_fit %>%
   vip(lambda = as.numeric(lr_reg_best[1,1]))
 
 # What do you think of these feature importances? Is it meaningful or would you
-# exclude any of the variables and re-run? 
+#exclude any of the variables and re-run? 
+
+#If time allows, try setting the mixture variable in the regressiom to different values between 0 and 1 and see what happens.
+#Hint: Mixture = 0 is called Ridge regression, anything between 0 and 1 is called elastic net.s

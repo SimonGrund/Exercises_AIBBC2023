@@ -30,6 +30,7 @@ Summary_d <-
   distinct(gene_id, n_above_0) %>%
   ungroup()
 
+# Comment on each line above what it does,either in writing here or discussing it with someone
 
 #Visualize
 hist(Summary_d$n_above_0)

@@ -12,6 +12,7 @@ library(tidymodels)      # for tidymodels
 library(GGally)          # Extension to our plotting library(ggplot2)
 library(dotwhisker)      # Allows fast and easy coefficient (dot-whisker) plots
 library(skimr)           # for variable summaries
+library(ggpubr)          # Package to make ggplots nicer
 tidymodels_prefer(quiet = TRUE) #Set tidymodels as the default whenever multiple packages have functions with the same name
 
 ### PART 0: Loading and recoding the Framingham data set ####
@@ -22,7 +23,7 @@ chd_full <- read_rds("Data/chd_full.rds")
 
 ### PART 1: Explore the data and its correlation structure ####
 # look at the the data. What are some of the difference compared to before the formatting?
-glimpse(chd_full)
+glimpse(?)
 
 # Try also using skim instead of glimpse: This gives a different overview.
 chd_full %>% 
@@ -41,16 +42,19 @@ chd_full %>%
 # Time to prepare for modelling.
 # First we split the data, so that we save some data for testing our model.
 set.seed(122)
-chd_split <- initial_split(chd_full, prop = 0.80)
+chd_split <- initial_split(data = ?, prop = 0.80)
 
 
 # C)
 # Create data frames for the two sets:
 chd_train <- training(chd_split)
-chd_test <- testing(chd_split)
+chd_test <- testing(?)
+
+# Look at the outputs
 chd_test
 chd_train
 chd_split
+
 # D)
 # Consider the above and discuss with your neighbor(s):
 # i.   What does the code do?
@@ -115,7 +119,7 @@ tidy(lm_fit)
 # ii. Look at and interpret the results.  
 lm_fit <- 
   linear_reg() %>% 
-  fit(bmi ~ sbp + sex + ?, data = chd_train)
+  ?(bmi ~ sbp + sex + ?, data = chd_train)
 tidy(lm_fit)
 
 # C)
@@ -129,23 +133,26 @@ tidy(lm_fit)
 # don't dive in too deep yet.
 
 lm_fit <- 
-  linear_reg() %>% 
+  ?() %>% 
   fit(bmi ~ . -id , data = chd_train)
 tidy(lm_fit)
 
 ## draw dot-and-whisker plots (also known as a coefficient plot)
-tidy(lm_fit) %>% 
-  dwplot(dot_args = list(size = 2, color = "black"),
-         whisker_args = list(color = "black"),
-         vline = geom_vline(xintercept = 0, colour = "grey50", linetype = 2))
+tidy_data = tidy(lm_fit)%>%
+  filter(term != "(Intercept)")
 
+ggplot(tidy_data, aes(x = estimate, y = term))+
+  geom_errorbarh(aes(xmin = estimate-std.error, xmax = estimate+std.error))+
+  geom_vline(xintercept = 0, lty = 2, linewidth = 0.5, col = "gray")+
+  theme_classic2()
+  
 
 # D)
 # What does the dot-and-whisker plt show and why is it useful?
 
 # E)
-# Make predictions on the test data using the above full model:
-chd_test_w_pred <- augment(lm_fit, new_data = chd_test)
+# Make predictions on the test data (chd_test) using the above full model:
+chd_test_w_pred <- augment(lm_fit, new_data = ?)
 
 # F)
 # look at the chd_test_w_pred  with glimpse, skim, or similar

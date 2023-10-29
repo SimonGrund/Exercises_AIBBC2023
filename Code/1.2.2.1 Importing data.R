@@ -9,8 +9,11 @@
 #Loading necessary packages
 library(tidyverse)
 
-# In the previous exercise we loaded the data set we used from a binary rds
-# file:
+# In the previous exercise we loaded the pre-install 'mpg' dataset.
+# Now you will learn to load our own data. We have included functions for many different
+# data types below. Try running each line and see that you get the same data in the environment. 
+
+# First we load an R-data file (rds)
 d <- read_rds("Data/chd_500.rds")
 
 # But often we will get data in a text format like csv (comma separated values)
@@ -29,7 +32,7 @@ d = read_excel("Data/chd_500.xlsx")
 #### Exercise 1 ####
 # Load the data through any of the above commands. 
 # Then take a glimpse at the data and see if it looks as excpected
-glimpse(?)
+glimpse(d)
 
 # A) 
 # R will automatically detect what type of information there is in each coloumn.
