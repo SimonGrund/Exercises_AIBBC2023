@@ -7,7 +7,7 @@
 ####
 
 #PART 1 — R programming and data visualization#
-#### Intorduction to R-programming
+#### Introduction to R-programming
 # Any line starting with a hash-tag is just text! This way,
 # you can leave notes for yourself. Try to make a new line below
 # and write a hashtag (#) followed by a message for yourself.

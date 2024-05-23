@@ -10,7 +10,6 @@
 library(tidyverse)       # for tidyverse
 library(tidymodels)      # for tidymodels
 library(GGally)          # Extension to our plotting library(ggplot2)
-library(dotwhisker)      # Allows fast and easy coefficient (dot-whisker) plots
 library(skimr)           # for variable summaries
 library(ggpubr)          # Package to make ggplots nicer
 tidymodels_prefer(quiet = TRUE) #Set tidymodels as the default whenever multiple packages have functions with the same name

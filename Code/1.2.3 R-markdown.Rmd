@@ -23,7 +23,7 @@ Remember to refer to the **R Markdown** cheat sheet and **Reference guide** when
     - a hyperlink
 4. Try to Knit your document.
 5. Change output to pdf and knit it again (might not work without additional software installed).
-6. Change output to word and knit it again.
+6. Change output to Word and knit it again.
 7. Add an R code chunk.
 8. Try making a plot based on the mpg data set.
     - knit the document.
